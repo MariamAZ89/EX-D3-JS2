@@ -14,11 +14,22 @@ const aggiungiTask = function(task){
     li.innerText = task
     ul.appendChild(li)
     taskComplate(li, task)
+    elimina(li)
+    
 }
  const taskComplate = function(li, task){
     li.addEventListener('click', () => {
         li.style.textDecoration = "line-through";
         console.log( task,li)
+    })
+ }
+
+ const elimina = function(li){
+    const button = document.createElement('button');
+    button.innerText = " delete "
+    li.appendChild(button);
+    button.addEventListener('click', ()=> {
+        li.remove()
     })
  }
 
